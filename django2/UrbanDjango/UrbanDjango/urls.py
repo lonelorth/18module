@@ -2,7 +2,7 @@
 URL configuration for UrbanDjango project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.1/topics/http/urls/
+    https://docs.djangoproject.com/en/4.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -14,17 +14,22 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from tempfile import template
+
 from django.contrib import admin
 from django.urls import path
-# from task2 import views as task2_views
-from task4 import views as task4_views
-
+# from django.views.generic import TemplateView
+# from task2.views import func_templates, ClassTemplates
+# from task4.views import platform, games, cart
+from task5.views import sign_up_by_html, sign_up_by_django
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('class/', task2_views.class_template, name='class_template'),
-    # path('function/', task2_views.func_template, name='func_template'),
-    path('', task4_views.main_page, name='platform'),
-    path('games/', task4_views.store_games, name='games'),
-    path('cart/', task4_views.cart_page, name='cart')
+    path("", sign_up_by_html),
+    path("django_forms", sign_up_by_django),
+    # path('func/', func_templates),
+    # path('class/', ClassTemplates.as_view()),
+    # path('platform/', platform),
+    # path('platform/games/', games),
+    # path('platform/cart/', cart),
 ]
