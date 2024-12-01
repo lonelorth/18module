@@ -11,7 +11,7 @@ def index(request):
         'first': first,
         'second': second,
     }
-    return render(request, "third_task/index.html", context)
+    return render(request, "third_task/index2.html", context)
 
 def market(request):
     buy = 'BUY'
@@ -27,4 +27,4 @@ def trashcan(request):
     context = {
         'text': text,
     }
-    return render(request, "third_task/second_page.html", context)
+    return render(request, "third_task/first_page.html", context)
